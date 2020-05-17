@@ -22,7 +22,7 @@ function preload(){
 }
 
 function setup(){
-  canvas = createCanvas(displayWidth - 20, displayHeight-30);
+  canvas = createCanvas(displayWidth - 30, displayHeight-20);
   database = firebase.database();
   game = new Game();
   game.getState();

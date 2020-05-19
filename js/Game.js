@@ -46,7 +46,7 @@ class Game {
     Player.getPlayerInfo();
 
     if (allPlayers !== undefined) {
-      background(rgb(198, 135, 103));
+      //background(rgb(198, 135, 103));
       image(track2, -displayWidth * 4, 0, displayWidth * 5, displayHeight);
       
       //var display_position = 100;
@@ -87,6 +87,17 @@ class Game {
     if (keyIsDown(UP_ARROW) && player.index !== null) {
       player.distance += 10
       player.update();
+    }
+
+    if (keyIsDown(VK_SPACE) && player.index !== null) {
+      for (i = 0;i<=15;i++){
+        player.position.y += 1;
+        player.distance += 0.5;
+      }
+      for (j = i;j<=15;i-=1){
+        player.position.y -= 1;
+        player.distance += 0.5;
+      }
     }
 
     if (player.distance > 3460) {
